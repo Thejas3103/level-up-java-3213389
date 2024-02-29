@@ -6,7 +6,16 @@ public class App {
 
     public static double calculateWaterBill(double gallonsUsage) {
         // TODO: Implement method
-        return 0;
+        double minimumcharge = 18.84;
+        double ccf = 748;
+
+        if (gallonsUsage <= (2*ccf)) {
+            return minimumcharge;
+        } else {
+            double extra = gallonsUsage - (2*ccf);
+            double totalcost = Math.ceil(extra /ccf) * 3.90;
+            return minimumcharge + totalcost;
+        }
     }
 
     public static void main(String[] args) {
